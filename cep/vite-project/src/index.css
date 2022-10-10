@@ -1,4 +1,12 @@
 * {
   padding: 0;
   margin: 0;
+  font-family: 'Poppins', sans-serif;
+  
+}
+
+body {
+  background-image: url(https://st2.depositphotos.com/1022597/11107/i/950/depositphotos_111074986-stock-photo-sao-paulo-map-detail-with.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }

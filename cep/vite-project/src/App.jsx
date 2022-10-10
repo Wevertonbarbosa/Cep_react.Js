@@ -1,10 +1,12 @@
 import { useForm } from 'react-hook-form';
 import './App.css';
+import InputMask from 'react-input-mask';
 
 function App() {
     const { register, handleSubmit, setValue, setFocus } = useForm();
 
     const onSubmit = (e) => {
+        alert('Muito Obrigado pela visita!');
         console.log(e);
     };
 
@@ -32,8 +34,11 @@ function App() {
                 <label>
                     <h4>Cep:</h4>
 
-                    <input
+                    <InputMask
+                        mask="99999-999"
                         type="text"
+                        id="inputCep"
+                        autoComplete='none'
                         placeholder="Digite seu Cep"
                         /*Register ele deixa marcado/registrado a tag para que eu possa atribuir o que eu queira de uma forma prática*/
                         {...register('cep')}
@@ -46,6 +51,7 @@ function App() {
                     <h4>Rua:</h4>
                     <input
                         type="text"
+                        autoComplete='none'
                         placeholder="Digite seu Rua"
                         {...register('address')}
                     />
@@ -55,6 +61,7 @@ function App() {
                     <h4>Número:</h4>
                     <input
                         type="text"
+                        autoComplete='none'
                         placeholder="Digite seu Número"
                         {...register('addressNumber')}
                     />
@@ -64,6 +71,7 @@ function App() {
                     <h4>Bairro:</h4>
                     <input
                         type="text"
+                        autoComplete='none'
                         placeholder="Digite seu Bairro"
                         {...register('neighborhood')}
                     />
@@ -73,6 +81,7 @@ function App() {
                     <h4>Cidade:</h4>
                     <input
                         type="text"
+                        autoComplete='none'
                         placeholder="Digite sua Cidade"
                         {...register('city')}
                     />
@@ -82,14 +91,15 @@ function App() {
                     <h4>Estado:</h4>
                     <input
                         type="text"
+                        autoComplete='none'
                         placeholder="Digite seu Estado"
                         {...register('uf')}
                     />
                 </label>
-
-                <h2></h2>
-
-                <button type="submit">Enviar</button>
+                <div className='buttons'>
+                    <button type="submit">Enviar</button>
+                    <input type="reset" name="Limpar" id="btn-clear" value="Limpar" />
+                </div>
             </form>
         </div>
     );
